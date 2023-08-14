@@ -52,7 +52,7 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
         .package(
             url: "https://github.com/Alamofire/Alamofire.git",
-            exact: "5.0.0-rc.2"
+            exact: "5.0.0-rc.3"
         ),
         .package(
             url: "https://github.com/realm/realm-swift.git",
