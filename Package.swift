@@ -40,6 +40,12 @@ let package = Package(
             targets: [
                 "MaterialComponents"
             ]
+        ),
+        .library(
+            name: "PinCodeTextField",
+            targets: [
+                "PinCodeTextField"
+            ]
         )
     ],
     dependencies: [
@@ -93,6 +99,12 @@ let package = Package(
             dependencies: [
             ],
             path: "Sources/MaterialComponents"
+        ),
+        .target(
+            name: "PinCodeTextField",
+            dependencies: [
+            ],
+            path: "Sources/PinCodeTextField"
         )
     ]
 )
