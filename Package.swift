@@ -11,18 +11,6 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "AllResources",
-            targets: [
-                "AlamofireObjectMapper",
-                "ObjectMapper",
-                "CCTextFieldEffects",
-                "ObjectMapper+Realm",
-                "TTTAttributedLabel",
-                "MaterialComponents",
-                "PinCodeTextField"
-            ]
-        ),
-        .library(
             name: "AlamofireObjectMapper",
             targets: [
                 "AlamofireObjectMapper",
@@ -56,6 +44,18 @@ let package = Package(
         .library(
             name: "PinCodeTextField",
             targets: [
+                "PinCodeTextField"
+            ]
+        ),
+        .library(
+            name: "AllResources",
+            targets: [
+                "AlamofireObjectMapper",
+                "ObjectMapper",
+                "CCTextFieldEffects",
+                "ObjectMapper+Realm",
+                "TTTAttributedLabel",
+                "MaterialComponents",
                 "PinCodeTextField"
             ]
         )
