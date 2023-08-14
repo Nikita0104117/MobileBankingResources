@@ -5,19 +5,94 @@ import PackageDescription
 
 let package = Package(
     name: "MobileBankingResources",
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MobileBankingResources",
-            targets: ["MobileBankingResources"]),
+            name: "AlamofireObjectMapper",
+            targets: [
+                "AlamofireObjectMapper",
+                "ObjectMapper"
+            ]
+        ),
+        .library(
+            name: "CCTextFieldEffects",
+            targets: [
+                "CCTextFieldEffects"
+            ]
+        ),
+        .library(
+            name: "ObjectMapper+Realm",
+            targets: [
+                "ObjectMapper+Realm"
+            ]
+        ),
+        .library(
+            name: "TTTAttributedLabel",
+            targets: [
+                "TTTAttributedLabel"
+            ]
+        ),
+        .library(
+            name: "MaterialComponents",
+            targets: [
+                "MaterialComponents"
+            ]
+        )
     ],
-    targets: [
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+        .package(
+            url: "https://github.com/Alamofire/Alamofire.git",
+            exact: "5.0.0-rc.2"
+        ),
+        .package(
+            url: "https://github.com/realm/realm-swift.git",
+            exact: "10.42.0"
+        )
+    ], targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MobileBankingResources"),
-        .testTarget(
-            name: "MobileBankingResourcesTests",
-            dependencies: ["MobileBankingResources"]),
+            name: "AlamofireObjectMapper",
+            dependencies: [
+                .product(name: "Alamofire", package: "Alamofire")
+            ],
+            path: "Sources/AlamofireObjectMapper"
+        ),
+        .target(
+            name: "ObjectMapper",
+            dependencies: [
+            ],
+            path: "Sources/ObjectMapper"
+        ),
+        .target(
+            name: "CCTextFieldEffects",
+            dependencies: [
+            ],
+            path: "Sources/CCTextFieldEffects"
+        ),
+        .target(
+            name: "ObjectMapper+Realm",
+            dependencies: [
+                .product(name: "RealmSwift", package: "realm-swift")
+            ],
+            path: "Sources/ObjectMapper+Realm"
+        ),
+        .target(
+            name: "TTTAttributedLabel",
+            dependencies: [
+            ],
+            path: "Sources/TTTAttributedLabel"
+        ),
+        .target(
+            name: "MaterialComponents",
+            dependencies: [
+            ],
+            path: "Sources/MaterialComponents"
+        )
     ]
 )
