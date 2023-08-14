@@ -83,7 +83,8 @@ let package = Package(
         .target(
             name: "ObjectMapper+Realm",
             dependencies: [
-                .product(name: "RealmSwift", package: "realm-swift")
+                .product(name: "RealmSwift", package: "realm-swift"),
+                .product(name: "ObjectMapper", package: "ObjectMapper")
             ],
             path: "Sources/ObjectMapper+Realm"
         ),
