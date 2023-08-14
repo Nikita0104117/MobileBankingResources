@@ -69,7 +69,8 @@ let package = Package(
         .target(
             name: "AlamofireObjectMapper",
             dependencies: [
-                .product(name: "Alamofire", package: "Alamofire")
+                .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "ObjectMapper", package: "ObjectMapper")
             ],
             path: "Sources/AlamofireObjectMapper"
         ),
