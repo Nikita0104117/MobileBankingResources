@@ -13,8 +13,7 @@ let package = Package(
         .library(
             name: "AlamofireObjectMapper",
             targets: [
-                "AlamofireObjectMapper",
-                "ObjectMapper"
+                "AlamofireObjectMapper"
             ]
         ),
         .library(
@@ -46,18 +45,6 @@ let package = Package(
             targets: [
                 "PinCodeTextField"
             ]
-        ),
-        .library(
-            name: "AllResources",
-            targets: [
-                "AlamofireObjectMapper",
-                "ObjectMapper",
-                "CCTextFieldEffects",
-                "ObjectMapper+Realm",
-                "TTTAttributedLabel",
-                "MaterialComponents",
-                "PinCodeTextField"
-            ]
         )
     ],
     dependencies: [
@@ -70,8 +57,13 @@ let package = Package(
         .package(
             url: "https://github.com/realm/realm-swift.git",
             exact: "10.42.0"
+        ),
+        .package(
+            url: "https://github.com/tristanhimmelman/ObjectMapper.git",
+            exact: "4.2.0"
         )
-    ], targets: [
+    ],
+    targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
@@ -80,13 +72,7 @@ let package = Package(
                 .product(name: "Alamofire", package: "Alamofire")
             ],
             path: "Sources/AlamofireObjectMapper"
-        ),
-        .target(
-            name: "ObjectMapper",
-            dependencies: [
-            ],
-            path: "Sources/ObjectMapper"
-        ),
+        )
         .target(
             name: "CCTextFieldEffects",
             dependencies: [
