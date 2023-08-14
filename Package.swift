@@ -72,7 +72,7 @@ let package = Package(
                 .product(name: "Alamofire", package: "Alamofire")
             ],
             path: "Sources/AlamofireObjectMapper"
-        )
+        ),
         .target(
             name: "CCTextFieldEffects",
             dependencies: [
